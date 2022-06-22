@@ -25,7 +25,7 @@ pipeline {
         stage ("doker image build") {
             steps {
                 echo "hello"
-                sh "docker build -t pratimadewde/docker_jenkins_springboot/image:${BUILD_NUMBER} ."
+                sh "docker build -t pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER} ."
             }
         }
         stage ("docker login"){
@@ -37,12 +37,12 @@ pipeline {
         }
         stage ("docker image push"){
             steps{
-                sh "docker push pratimadewde/docker_jenkins_springboot/image:${BUILD_NUMBER}"
+                sh "docker push pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
             }
         }
         stage ("docker deploy"){
             steps {
-                sh "docker run -itd -p 8081:8080 pratimadewde/docker_jenkins_springboot/image:${BUILD_NUMBER}"
+                sh "docker run -itd -p 8081:8080 pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
             }
         }
 
