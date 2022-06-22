@@ -37,7 +37,7 @@ pipeline {
         }
         stage ("docker image push"){
             steps{
-                sh "docker push https://hub.docker.com/repository/docker/pratimadewde/docker_jenkins_springboot/image:${BUILD_NUMBER}"
+                sh "docker push pratimadewde/docker_jenkins_springboot/image:${BUILD_NUMBER}"
             }
         }
         stage ("docker deploy"){
