@@ -25,7 +25,7 @@ pipeline {
         stage ("doker image build") {
             steps {
                 echo "hello"
-                sh "docker build https://hub.docker.com/repository/docker/pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
+                sh "docker build -t docker_jenkins_springboot/image:${BUILD_NUMBER} ."
             }
         }
         stage ("docker login"){
