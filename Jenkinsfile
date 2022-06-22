@@ -25,7 +25,7 @@ pipeline {
         stage ("doker image build") {
             steps {
                 echo "hello"
-                sh "docker build -t pratimadewde/project1/springboot-maven:${BUILD_NUMBER}"
+                sh "docker build -t https://hub.docker.com/repository/docker/pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
             }
         }
         stage ("docker login"){
@@ -37,12 +37,12 @@ pipeline {
         }
         stage ("docker image push"){
             steps{
-                sh "docker push pratimadewde/project1/springboot-maven:${BUILD_NUMBER}"
+                sh "docker push https://hub.docker.com/repository/docker/pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
             }
         }
         stage ("docker deploy"){
             steps {
-                sh "docker run -itd -p 8081:8080 pratimadewde/project1/springboot-maven:${BUILD_NUMBER}"
+                sh "docker run -itd -p 8081:8080 https://hub.docker.com/repository/docker/pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
             }
         }
 
