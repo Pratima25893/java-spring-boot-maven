@@ -8,7 +8,7 @@ pipeline {
 
     stages {
         stage("checkut SCM") {
-            step{
+            steps{
                 git branch: 'main', credentialsId: 'Gitnew', url: 'https://github.com/Pratima25893/java-spring-boot-maven'
             }
         }
