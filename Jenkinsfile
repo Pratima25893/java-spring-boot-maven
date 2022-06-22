@@ -41,6 +41,7 @@ pipeline {
     stages {
         stage ("doker image build") {
             steps {
+                echo "hello"
                 sh "docker build -it pratimadewde/project1/springboot-maven:${BUILD_NUMBER}"
             }
         }
