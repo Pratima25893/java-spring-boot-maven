@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     tools {
-        maven "Maven 3.0.5"
+        maven "maven 3.0.5"
     }
 
     stages {
@@ -17,7 +17,7 @@ pipeline {
                 sh "mvn clean compile"
             }
         }
-        stages ("build maven") {
+        stage ("build maven") {
             steps {
                 sh "mvn package"
             }
