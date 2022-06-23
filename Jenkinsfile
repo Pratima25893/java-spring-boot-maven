@@ -17,6 +17,16 @@ pipeline {
                 sh "mvn clean compile"
             }
         }
+        stage ("test"){
+            steps {
+                sh "mvn test"
+            }
+            post {
+                always {
+                    junit "./target/TEST-*.xml"
+                }
+            }
+        }
         stage ("build maven") {
             steps {
                 sh "mvn package"
