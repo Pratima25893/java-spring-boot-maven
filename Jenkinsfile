@@ -48,12 +48,4 @@ pipeline {
 
     }
 
-//     stages ("test") {
-//         steps {
-//             step {
-//                 sh "junit ..."
-//             }
-//         }
-//     }
-
 }
