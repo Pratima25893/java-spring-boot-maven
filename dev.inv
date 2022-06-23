@@ -1,2 +1,2 @@
 [dev]
-172.31.8.113 ansible_user=cloud_user
+172.31.8.113 ansible_user=ec2_user
