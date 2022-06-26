@@ -43,7 +43,7 @@ pipeline {
         stage ("ansible deploy"){
             steps {
                 sh "ls /var/lib/jenkins/workspace/springbootwithansible/"
-                ansiblePlaybook become: false, credentialsId: 'ansiblecred', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
+                ansiblePlaybook become: false, credentialsId: 'ansiblecred', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'playbook.yml'
             }
         }
 
