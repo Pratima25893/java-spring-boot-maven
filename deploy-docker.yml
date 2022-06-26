@@ -29,5 +29,5 @@
       name: springboot
       image: "pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
       state: started
-      published_ports:
+      ports:
       - "0.0.0.0:8081:8080"
