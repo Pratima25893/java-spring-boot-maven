@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     tools {
-        maven "maven3.2"
+        maven "maven3"
     }
 
     stages {
@@ -40,9 +40,10 @@ pipeline {
                 sh "docker push pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
             }
         }
-        stage ("docker deploy"){
+        stage ("ansible deploy"){
             steps {
-                sh "docker run -itd -p 8081:8080 pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
+                sh "ls /var/lib/jenkins/workspace/springbootwithansible/"
+                ansiblePlaybook become: false, credentialsId: 'ansiblecred', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
             }
         }
 
