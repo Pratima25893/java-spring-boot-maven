@@ -2,14 +2,14 @@
 - hosts: dev_env
   become: yes
   tasks:
-  - name: "Installing Docker Prerequisite packages"
-    dnf:
-      name: "{{ item }}"
-      state: latest
-    with_items:
-    - yum-utils
-    - device-mapper-persistent-data
-    - lvm2
+#   - name: "Installing Docker Prerequisite packages"
+#     dnf:
+#       name: "{{ item }}"
+#       state: latest
+#     with_items:
+#     - yum-utils
+#     - device-mapper-persistent-data
+#     - lvm2
   - name: "Configuring docker-ce repo"
     get_url:
       url: https://download.docker.com/linux/centos/docker-ce.repo
