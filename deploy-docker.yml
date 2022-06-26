@@ -27,7 +27,7 @@
   - name: start the docker container
     docker_container:
       name: springboot
-      image: "pratimadewde/docker_jenkins_springboot:${BUILD_NUMBER}"
+      image: "pratimadewde/docker_jenkins_springboot:{{ lookup('env','BUILD_NUMBER') }}"
       state: started
       ports:
       - "0.0.0.0:8081:8080"
