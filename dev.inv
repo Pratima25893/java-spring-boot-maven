@@ -1,2 +1,2 @@
 [dev_env]
-172.31.122.205 ansible_user=cloud_user
+175.20.20.134 ansible_user=ec2_user
